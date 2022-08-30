@@ -1,0 +1,208 @@
+﻿@using PharmApp.DrugsInfo
+@using PharmApp.Models;
+
+@*@model PharmApp.DrugsInfo.ExcelData[]*@
+@model TblDrugsInfo[]
+<html>
+<head>
+    @*<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="splash-icon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="splash-icon-big.png">
+        <link rel="apple-touch-startup-image" href="splash-screen.png" media="screen and (max-device-width: 320px)" />
+        <link rel="apple-touch-startup-image" href="splash-screen@2x.png" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" />
+        <link rel="apple-touch-startup-image" href="splash-screen-six.png" media="(device-width: 375px)">
+        <link rel="apple-touch-startup-image" href="splash-screen-six-plus.png" media="(device-width: 414px)">
+        <link rel="apple-touch-startup-image" sizes="640x1096" href="splash-screen@3x.png" />
+        <link rel="apple-touch-startup-image" sizes="1024x748" href="splash-screen-ipad-landscape" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)" />
+        <link rel="apple-touch-startup-image" sizes="768x1004" href="splash-screen-ipad-portrait.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)" />
+        <link rel="apple-touch-startup-image" sizes="1536x2008" href="splash-screen-ipad-portrait-retina.png" media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)" />
+        <link rel="apple-touch-startup-image" sizes="1496x2048" href="splash-screen-ipad-landscape-retina.png" media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)" />*@
+
+    <link href="style.css" rel="stylesheet">
+    <link href="framework.css" rel="stylesheet">
+    <link href="owl.theme.css" rel="stylesheet">
+    <link href="swipebox.css" rel="stylesheet">
+    <link href="font-awesome.css" rel="stylesheet">
+    <link href="font-awesome2.css" rel="stylesheet" />
+    <link href="animate.css" rel="stylesheet">
+
+    <script src="jquery.js"></script>
+    <script src="jqueryui.js"></script>
+    <script src="framework.plugins.js"></script>
+    <script src="custom.js"></script>
+    <script src="Search.js"></script>
+
+</head>
+<body>
+
+    <div id="preloader">
+        <div id="status">
+            <p class="center-text" dir="rtl">
+                صبور باشید ....
+            </p>
+        </div>
+    </div>
+
+    <div class="menu-wrapper">
+        <div class="menu">
+            <a href="#" class="item">
+                <input list="list1" type="text" id="txtsearch" onkeyup="IndexInterFace.SearchByName(this.value)" dir="rtl" class="contactField requiredField" name="name" placeholder="کلمه مورد نظر وارد کنید ...." value="" />
+            </a>
+            @*<a href="#" class="item" id="selected">
+                    <img src="2.jpg" alt="img">
+                    Features
+                </a>
+                <a href="#" class="item">
+                    <img src="3.jpg" alt="img">
+                    Gallery
+                </a>
+                <a href="#" class="item">
+                    <img src="4.jpg" alt="img">
+                    Portfolio
+                </a>
+                <a href="#" class="item">
+                    <img src="5.jpg" alt="img">
+                    App Styled
+                </a>
+                <a href="#" class="item">
+                    <img src="6.jpg" alt="img">
+                    Pages
+                </a>
+                <a href="#" class="item">
+                    <img src="7.jpg" alt="img">
+                    Blog
+                </a>
+                <a href="#" class="item">
+                    <img src="8.jpg" alt="img">
+                    Contact
+                </a>*@
+        </div>
+    </div>
+
+    <div class="header">
+        <img src="LogoBackWhite.png" class="main-logo" alt="Alternate Text" />
+        @*<a href="#" class="main-logo"></a>*@
+        <div class="header-controls">
+            <a href="#" class="open-more"><img src="Menu.png" width="20" height="20" /></a>
+            <a href="#" class="open-slide"><img src="Search.png" width="20" height="20" /></a>
+            @*<a href="#" class="open-menu"><i class="fa fa-navicon"></i></a>*@
+        </div>
+    </div>
+
+    <div class="all-elements">
+        <div class="snap-drawers">
+            <div class="snap-drawer snap-drawer-right">
+                @*<div class="sidebar-header">
+                        <a href="#"><i class="fa fa-phone"></i></a>
+                        <a href="#"><i class="fa fa-comment"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-times"></i></a>
+                    </div>*@
+
+                @*<div class="sidebar-logo"></div>*@
+
+                <div class="sidebar-divider">
+                </div>
+
+                <ul class="sidebar-navigation" dir="rtl" style="padding-right:10px;">
+                    <li><a onclick="IndexInterFace.RedirectHelpView()" href="#" style="color:black">راهنمای کاربری</a></li>
+                    <li><a onclick="IndexInterFace.RedirectAboutUs()" href="#" style="color:black">درباره ما</a></li>
+                    <li><a onclick="IndexInterFace.Exit()" href="#" style="color:black">خروج</a></li>
+
+                </ul>
+
+                @*<div class="sidebar-divider">
+                        get social
+                    </div>
+
+                    <ul class="sidebar-navigation">
+                        <li><a href="#"><i class="fa fa-facebook"></i>Facebook<i class="fa fa-caret-right"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i>Twitter<i class="fa fa-caret-right"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i>Google Plus<i class="fa fa-caret-right"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube-play"></i>YouTube<i class="fa fa-caret-right"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i>LinkedIn<i class="fa fa-caret-right"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i>Dribbble<i class="fa fa-caret-right"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest"></i>Pinterest<i class="fa fa-caret-right"></i></a></li>
+                    </ul>
+
+                    <div class="sidebar-divider">
+                        updates and news
+                    </div>
+
+                    <a href="#" class="sidebar-update red-update">
+                        <i class="fa fa-times"></i>
+                        <strong>Warning</strong>
+                        <em>Released a right sidebar item</em>
+                    </a>
+
+                    <a href="#" class="sidebar-update green-update">
+                        <i class="fa fa-check"></i>
+                        <strong>All great!</strong>
+                        <em>Released a right sidebar item</em>
+                    </a>
+
+                    <a href="#" class="sidebar-update blue-update">
+                        <i class="fa fa-info"></i>
+                        <strong>Information</strong>
+                        <em>Released a right sidebar item</em>
+                    </a>
+
+                    <a href="#" class="sidebar-update yellow-update full-bottom">
+                        <i class="fa fa-warning"></i>
+                        <strong>Atention</strong>
+                        <em>Released a right sidebar item</em>
+                    </a>*@
+            <div class="sidebar-divider">
+                Physical Properties All Rights Reserved 2021
+            </div>
+            </div>
+        </div>
+
+        <!-- Page Content-->
+        <div id="content" class="snap-content">
+            <div class="header-clear"></div>
+
+            <div class="content text-justify" id="divdrugslist">
+                @if(Model==null)
+                {
+                    <h1 style="color:red;text-align:center">گیاهی یافت نشد</h1>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                {
+                        <div class="decoration"></div>
+                        <div class="paddingtop" onclick="IndexInterFace.ShowDetails(@item.Id)" class="live-search-list">
+
+                            <div class="one-half">
+                                <p>
+                                    <h4 dir="ltr">@item.EnglishName</h4><br>
+                                    @item.CommercialName
+                                </p>
+                            </div>
+                            <div class="two-half last-column">
+                                <p>
+                                    <h5 dir="rtl">@item.PersianName</h5><br>
+
+                                </p>
+                            </div>
+                        </div>
+                        <hr />
+                    }
+                }
+             
+
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DFF97605-2458-408B-A289-8E41C3D7FE8D}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PharmApp</RootNamespace>
+    <AssemblyName>PharmApp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <Debugger>Xamarin</Debugger>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
+    <AndroidSupportedAbis />
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>PdbOnly</DebugType>
+    <DebugSymbols>True</DebugSymbols>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <Debugger>.Net (Xamarin)</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
+    <MandroidI18n />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Mono.Data.Sqlite" />
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.2.0\lib\MonoAndroid10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.3.2.0\lib\MonoAndroid10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net, Version=1.5.231.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlite-net-pcl.1.5.231\lib\netstandard1.1\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.1.11.121, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.11\lib\MonoAndroid\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.1.11.121, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.1.11\lib\MonoAndroid\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.1.11.121, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.1.11\lib\MonoAndroid\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.lib.e_sqlite3, Version=1.1.11.121, Culture=neutral, PublicKeyToken=e4ad490600e2234c, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.lib.e_sqlite3.android.1.1.11\lib\MonoAndroid\SQLitePCLRaw.lib.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.e_sqlite3, Version=1.1.11.121, Culture=neutral, PublicKeyToken=9c301db686d0bd12, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.provider.e_sqlite3.android.1.1.11\lib\MonoAndroid\SQLitePCLRaw.provider.e_sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUsRazorInterFace.cs" />
+    <Compile Include="DrugsInfoInterFace.cs" />
+    <Compile Include="Assets\RazorAboutUs.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RazorAboutUs.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\RazorDrugDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RazorDrugDetails.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\IndexRazor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndexRazor.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\RazorHelpView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RazorHelpView.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\RazorStartPage.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RazorStartPage.cshtml</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\AboutUsActivity.cs" />
+    <Compile Include="Controller\DrugDetailsActivity.cs" />
+    <Compile Include="Controller\GlobalInfos.cs" />
+    <Compile Include="Controller\HelpActivity.cs" />
+    <Compile Include="Controller\MainActivity.cs" />
+    <Compile Include="Controller\StartPageActivity.cs" />
+    <Compile Include="HelpRazorInterFace.cs" />
+    <Compile Include="IndexRazorInterFace.cs" />
+    <Compile Include="Models\DbPharmApp.cs" />
+    <Compile Include="Models\TblDrugsInfo.cs" />
+    <Compile Include="RazorStartPageInterFace.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartActivityIntent.cs" />
+    <Compile Include="Web References\DrugsInfo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\IndexRazor.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>IndexRazor.cs</LastGenOutput>
+      <SubType>None</SubType>
+    </AndroidAsset>
+    <AndroidAsset Include="fonts\fontawesome-webfont.ttf" />
+    <AndroidAsset Include="fonts\fontawesome-webfont.woff" />
+    <AndroidAsset Include="fonts\fontawesome-webfont.woff2" />
+    <AndroidAsset Include="fonts\FontAwesome.otf" />
+    <AndroidAsset Include="fonts\fontawesome-webfont.eot" />
+    <AndroidAsset Include="Assets\RazorDrugDetails.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>RazorDrugDetails.cs</LastGenOutput>
+      <SubType>None</SubType>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\RazorHelpView.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>RazorHelpView.cs</LastGenOutput>
+      <SubType>None</SubType>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\RazorAboutUs.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>RazorAboutUs.cs</LastGenOutput>
+      <SubType>None</SubType>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\RazorStartPage.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>RazorStartPage.cs</LastGenOutput>
+      <SubType>None</SubType>
+    </AndroidAsset>
+    <None Include="Content\bootstrap-theme.css.map" />
+    <None Include="Content\bootstrap-theme.min.css.map" />
+    <None Include="Content\bootstrap.css.map" />
+    <None Include="Content\bootstrap.min.css.map" />
+    <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\DrugDetails.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Help.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\AboutUs.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\StartPage.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <None Include="Scripts\jquery-3.1.1.min.map" />
+    <None Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <None Include="Web References\DrugsInfo\ExcelData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DrugsInfo\readdrugsinfo.wsdl" />
+    <None Include="Web References\DrugsInfo\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\framework.launcher.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\framework.plugins.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jquery.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\jqueryui.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\custom.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\framework.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\font-awesome2.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\framework.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\owl.theme.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\swipebox.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\animate.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\font-awesome.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-icon-big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-screen%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-screen%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-screen-ipad-landscape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-screen-ipad-landscape-retina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-screen-ipad-portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-screen-ipad-portrait-retina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-screen-six.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\splash-screen-six-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="fonts\fontawesome-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\sidebar-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\block_48.png" />
+    <AndroidAsset Include="Assets\bookmark_48.png" />
+    <AndroidAsset Include="Assets\address_48.png" />
+    <AndroidAsset Include="Assets\arrow22%402x.png" />
+    <AndroidAsset Include="Assets\arrow-down.png" />
+    <AndroidAsset Include="Assets\arrow-up.png" />
+    <AndroidAsset Include="Assets\arrow2%402x.png" />
+    <AndroidAsset Include="Assets\01W.png" />
+    <AndroidAsset Include="Assets\Medikal2.png" />
+    <AndroidAsset Include="Assets\120X120.png" />
+    <AndroidAsset Include="Assets\80X80.png" />
+    <AndroidAsset Include="Assets\BG.jpg" />
+    <Content Include="Assets\bootstrap-theme.css" />
+    <AndroidAsset Include="Assets\Pluse.png" />
+    <AndroidAsset Include="Assets\briefcase_48.png" />
+    <AndroidAsset Include="Assets\bubble_48.png" />
+    <AndroidAsset Include="Assets\buy_48.png" />
+    <AndroidAsset Include="Assets\calendar_48.png" />
+    <AndroidAsset Include="Assets\clipboard_48.png" />
+    <AndroidAsset Include="Assets\clock_48.png" />
+    <AndroidAsset Include="Assets\delete_48.png" />
+    <AndroidAsset Include="Assets\diagram_48.png" />
+    <AndroidAsset Include="Assets\document_48.png" />
+    <AndroidAsset Include="Assets\down_48.png" />
+    <AndroidAsset Include="Assets\flag_48.png" />
+    <AndroidAsset Include="Assets\folder_48.png" />
+    <AndroidAsset Include="Assets\gear_48.png" />
+    <AndroidAsset Include="Assets\globe_48.png" />
+    <AndroidAsset Include="Assets\heart_48.png" />
+    <AndroidAsset Include="Assets\help_48.png" />
+    <AndroidAsset Include="Assets\home_48.png" />
+    <AndroidAsset Include="Assets\info_48.png" />
+    <AndroidAsset Include="Assets\key_48.png" />
+    <AndroidAsset Include="Assets\label_48.png" />
+    <AndroidAsset Include="Assets\left_48.png" />
+    <AndroidAsset Include="Assets\letter_48.png" />
+    <AndroidAsset Include="Assets\license.txt" />
+    <AndroidAsset Include="Assets\monitor_48.png" />
+    <AndroidAsset Include="Assets\pencil_48.png" />
+    <AndroidAsset Include="Assets\plus_48.png" />
+    <AndroidAsset Include="Assets\present_48.png" />
+    <AndroidAsset Include="Assets\print_48.png" />
+    <AndroidAsset Include="Assets\right_48.png" />
+    <AndroidAsset Include="Assets\save_48.png" />
+    <AndroidAsset Include="Assets\search_48.png" />
+    <AndroidAsset Include="Assets\shield_48.png" />
+    <AndroidAsset Include="Assets\statistics_48.png" />
+    <AndroidAsset Include="Assets\stop_48.png" />
+    <AndroidAsset Include="Assets\tick_48.png" />
+    <AndroidAsset Include="Assets\trash_48.png" />
+    <AndroidAsset Include="Assets\up_48.png" />
+    <AndroidAsset Include="Assets\user_48.png" />
+    <AndroidAsset Include="Assets\wallet_48.png" />
+    <AndroidAsset Include="Assets\warning_48.png" />
+    <AndroidAsset Include="Assets\checkbox1.png" />
+    <AndroidAsset Include="Assets\checkbox1c.png" />
+    <AndroidAsset Include="Assets\checkbox2.png" />
+    <AndroidAsset Include="Assets\checkbox2c.png" />
+    <AndroidAsset Include="Assets\checkbox3.png" />
+    <AndroidAsset Include="Assets\checkbox3c.png" />
+    <AndroidAsset Include="Assets\grabbing.png" />
+    <AndroidAsset Include="Assets\minus.png" />
+    <AndroidAsset Include="Assets\next1.png" />
+    <AndroidAsset Include="Assets\plus.png" />
+    <AndroidAsset Include="Assets\prev1.png" />
+    <AndroidAsset Include="Assets\radio1.png" />
+    <AndroidAsset Include="Assets\radio1c.png" />
+    <AndroidAsset Include="Assets\radio2.png" />
+    <AndroidAsset Include="Assets\radio2c.png" />
+    <AndroidAsset Include="Assets\tick%402x.png" />
+    <AndroidAsset Include="Assets\PharmLogo.png" />
+    <AndroidAsset Include="Assets\Search.js" />
+    <AndroidAsset Include="Assets\WordColorChecker.js" />
+    <AndroidAsset Include="Assets\WordBoldChecker.js" />
+    <AndroidAsset Include="Assets\PharmLogo2K.jpg" />
+    <AndroidAsset Include="Assets\Medical.png" />
+    <AndroidAsset Include="Assets\lastVersionJquery.js" />
+    <AndroidAsset Include="Assets\Search3.js" />
+    <AndroidAsset Include="Assets\Search4.js" />
+    <AndroidAsset Include="Assets\Pharmacist.jpg" />
+    <AndroidAsset Include="Assets\intent.js" />
+    <AndroidAsset Include="Assets\RiceField.jpg" />
+    <AndroidAsset Include="Assets\Logo.png" />
+    <AndroidAsset Include="Assets\Title.png" />
+    <AndroidAsset Include="Assets\HtmlParser.js" />
+    <AndroidAsset Include="Assets\ChobineLogo.png" />
+    <AndroidAsset Include="Assets\LogoBackWhite.png" />
+    <AndroidAsset Include="Assets\LogoBackBlack.png" />
+    <AndroidAsset Include="Assets\StartPage.jpg" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Assets\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <AndroidAsset Include="Assets\Search2.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\bootstrap.js" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <None Include="Web References\DrugsInfo\readdrugsinfo.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://physicalproperties.ir/readdrugsinfo.asmx%3fop=GetData">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DrugsInfo\</RelPath>
+      <UpdateFromURL>http://physicalproperties.ir/readdrugsinfo.asmx%3fop=GetData</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+     Other similar extension points exist, see Microsoft.Common.targets.
+		<Target Name="BeforeBuild">
+		</Target>
+		<Target Name="AfterBuild">
+		</Target>
+ -->
+</Project>

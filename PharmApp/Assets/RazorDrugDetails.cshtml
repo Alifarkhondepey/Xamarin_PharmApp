@@ -1,0 +1,266 @@
+﻿@using PharmApp.DrugsInfo
+@using PharmApp.Models;
+
+@model TblDrugsInfo
+<html>
+<head>
+
+    <link href="style.css" rel="stylesheet">
+    <link href="framework.css" rel="stylesheet">
+    <link href="owl.theme.css" rel="stylesheet">
+    <link href="swipebox.css" rel="stylesheet">
+    <link href="font-awesome.css" rel="stylesheet">
+    <link href="font-awesome2.css" rel="stylesheet" />
+    <link href="animate.css" rel="stylesheet">
+    <link href="bootstrap-theme.css" rel="stylesheet" />
+    <link href="bootstrap.css" rel="stylesheet" />
+    <script src="lastVersionJquery.js"></script>
+    <script src="jquery.js"></script>
+    <script src="jqueryui.js"></script>
+    <script src="framework.plugins.js"></script>
+    <script src="custom.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="Search2.js"></script>
+
+
+
+
+</head>
+<body>
+    <div id="preloader">
+        <div id="status">
+            <p class="center-text" dir="rtl">
+                صبور باشید ....
+            </p>
+        </div>
+    </div>
+
+    <div class="menu-wrapper">
+        <div class="menu">
+            <a href="#" class="item">
+                <input list="list1" type="text" id="txtsearch" onkeyup="DrugsInfoInterFace.SearchByName(this.value)" dir="rtl" class="contactField requiredField" name="name" placeholder="کلمه مورد نظر وارد کنید ...." value="" />
+            </a>
+
+        </div>
+    </div>
+    <div class="header">
+        <img src="LogoBackWhite.png" class="main-logo" alt="Alternate Text" />
+        @*<a href="#" class="main-logo"></a>*@
+        <div class="header-controls">
+            <a href="#" class="open-more"><img src="Menu.png" width="20" height="20" /></a>
+            <a href="#" class="open-slide"><img src="Search.png" width="20" height="20" /></a>
+        </div>
+    </div>
+
+    <div class="all-elements">
+        <div class="snap-drawers">
+            <div class="snap-drawer snap-drawer-right">
+
+
+                <div class="sidebar-divider">
+                </div>
+
+                <ul class="sidebar-navigation" dir="rtl" style="padding-right:10px;">
+                    <li><a onclick="DrugsInfoInterFace.RedirectHelpView()" href="#" style="color:black">راهنمای کاربری</a></li>
+                    <li><a onclick="DrugsInfoInterFace.RedirectAboutUs()" href="#" style="color:black">درباره ما</a></li>
+                    <li><a href="#" style="color:black">خروج</a></li>
+
+                </ul>
+
+                <div class="sidebar-divider">
+                    Physical Properties All Rights Reserved 2021
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content-->
+        <div id="content" class="snap-content">
+            <div class="header-clear"></div>
+
+            <div>
+                <div class="staff-item">
+                    <img src="LogoBackBlack.png" />
+                    @*<h4>Jane Hidden</h4>
+                        <em>Front End Developer</em>
+                        <strong>We love quotes, and sometimes it's annoying to see tons of them that you need to scroll to!</strong>
+                        <a href="#" class="button button-green center-button">Text</a>*@
+                </div>
+            </div>
+
+
+           
+            <div class="content text-justify" id="divdrugslist">
+
+                <div class="container">
+                    <div class="one-half">
+                        <p>
+                            <h3 dir="ltr">@Model.EnglishName</h3><br>
+                        </p>
+                    </div>
+                    <div class="two-half last-column">
+                        <p>
+                            <h4 dir="rtl">@Model.PersianName</h4><br>
+
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div class="container">
+                    <div class="toggle-1">
+                        <a href="#" dir="rtl" class="deploy-toggle-1">
+                            نام علمی
+                        </a>
+                        <div class="toggle-content">
+                            <p id="pg111" dir="rtl">
+                                @Model.CommercialName
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="toggle-1">
+                        <a href="#" dir="rtl" class="deploy-toggle-1">
+                            نوع
+                        </a>
+                        <div class="toggle-content">
+                            <p id="pg144" dir="rtl">
+                                @Model.Type
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="toggle-1">
+                        <a href="#" dir="rtl" class="deploy-toggle-1">
+                            درصد همکشیدگی کل
+                        </a>
+                        <div class="toggle-content">
+                            <p id="pg" dir="rtl" style="white-space:pre-line; text-align:right;">
+                                @Model.PercentageTotalSolidity
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="container">
+                    <div class="toggle-1">
+                        <a href="#" dir="rtl" class="deploy-toggle-1">
+                            ضریب تغییرات ابعادی
+                        </a>
+                        <div class="toggle-content">
+
+                            <p id="pg2" dir="rtl" class="text-right" style="white-space:pre-line; text-align:right;">
+                                @Model.DimensionalChangeCoefficient
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="toggle-1">
+                        <a href="#" dir="rtl" class="deploy-toggle-1">
+                            درصد همکشیدگی
+
+                        </a>
+                        <div class="toggle-content">
+                            <p id="pg3" dir="rtl" style="white-space:pre-line; text-align:left">
+                                @Model.PercentageCohesion
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="toggle-1">
+                        <a href="#" dir="rtl" class="deploy-toggle-1">
+                            "میانگین  درصد
+                            رطوبت چوب سبز"
+
+                        </a>
+                        <div class="toggle-content">
+                            <p id="pg4" dir="rtl" style="white-space:pre-line; text-align:right;">
+                                @Model.AverageMoistureContentGreenWood
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="toggle-1">
+                        <a href="#" dir="rtl" class="deploy-toggle-1">
+                            وزن مخصوص در رطوبت
+
+                        </a>
+                        <div class="toggle-content">
+                            <p id="pg5" dir="rtl" style="white-space:pre-line; text-align:right;">
+                                @Model.SpecificGravityMoisture
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+               
+                <div class="container">
+                    <div class="toggle-1">
+                        <a href="#" dir="rtl" class="deploy-toggle-1"> توضیحات بیشتر</a>
+                        <div class="toggle-content">
+                            @if (@Model.ImageLinkAddress != null)
+                            {
+                                <img src="@Model.ImageLinkAddress" alt="UniFarmer" />
+                            }
+                            @if (@Model.Des != null)
+                            {
+                                <p id="pg18" dir="rtl" style="white-space:pre-line; text-align:right;">
+                                    @Model.Des
+                                </p>
+                            }
+                            @if (@Model.ImageLinkAddress1 != null)
+                            {
+
+                                <img src="@Model.ImageLinkAddress1" alt="UniFarmer" />
+                            }
+                            @if (@Model.Des1 != null)
+                            {
+
+                                <p id="pg19" dir="rtl" style="white-space:pre-line; text-align:right;">
+                                    @Model.Des1
+                                </p>
+                            }
+                            @if (@Model.ImageLinkAddress2 != null)
+                            {
+                                <img src="@Model.ImageLinkAddress2" alt="UniFarmer" />
+                            }
+                            @if (@Model.Des2 != null)
+                            {
+                                <p id="pg20" dir="rtl" style="white-space:pre-line; text-align:right;">
+                                    @Model.Des2
+                                </p>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+<script src="WordColorChecker.js"></script>
+</body>
+
+</html>
